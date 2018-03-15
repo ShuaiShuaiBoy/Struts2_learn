@@ -7,10 +7,28 @@
 
     <constant name="struts.devMode" value="true" />
 
-    <package name="basicstruts2" extends="struts-default">
+    <package name="basicstruts1" extends="struts-default" namespace="/test1">
     
         <action name="index">
             <result>/index.jsp</result>
+        </action>
+        
+        <action name="hello" class="com.cjs.action.HelloWorldAction" method="execute">
+        	<result name="success">/helloWorld.jsp</result>
+        </action>
+        
+        <action name="redHello" class="com.cjs.action.HelloWorldAction" method="execute">
+        	<result name="success" type="redirectAction">
+        	    <param name="namespace">/test2</param>
+        	    <param name="actionName">index</param>
+        	</result>
+        </action>
+    </package>
+    
+    <package name="basicstruts2" extends="struts-default" namespace="/test2">
+    
+        <action name="index">
+            <result>/index2.jsp</result>
         </action>
         
         <action name="hello" class="com.cjs.action.HelloWorldAction" method="execute">
