@@ -36,4 +36,9 @@
         </action>
     </package>
 
+    <package name="form1" extends="struts-default" namespace="/form1">
+        <action name="show" class="com.cjs.action.FormAction" method="execute">
+        	<result name="success">/form1.jsp</result>
+        </action>
+    </package>
 </struts>

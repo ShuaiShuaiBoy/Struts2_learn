@@ -8,5 +8,7 @@
   </head>
   <body>
     <h2><s:property value="messageStore.message" /></h2>
+    
+    <s:debug></s:debug>
   </body>
 </html>
